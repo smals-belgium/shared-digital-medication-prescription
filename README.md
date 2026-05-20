@@ -3,4 +3,4 @@
 Welcome! This repository contains the key documentation for using and integrating with eReferral (UHMEP).
 
 ## Documentation & Resources
-UHMEP API Cookbook
+[UHMEP MedicationPrescription API Cookbook](UHMEP-MedicationPrescription-Cookbook.pdf)
