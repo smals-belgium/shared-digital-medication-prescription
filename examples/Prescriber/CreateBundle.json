@@ -1,0 +1,375 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:b8bcdc55-d3c1-4e01-bc1c-53410ede07e8",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeMedicationPrescription"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "PractitionerRole",
+            "id": "527aa811-692d-4f17-8595-e9e7ab354e7e",
+            "meta": {
+              "profile": [
+                "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+              ]
+            },
+            "practitioner": {
+              "identifier": {
+                "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+                "value": "14371044001"
+              }
+            },
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+                    "code": "persphysician",
+                    "display": "physician"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "resourceType": "Medication",
+            "id": "med1",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:be:samv2:type",
+                  "code": "amppackage"
+                },
+                {
+                  "system": "https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/cnk-codes",
+                  "code": "0895540",
+                  "display": "Medrol 20 x 32mg",
+                  "userSelected": true
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "priority": "routine",
+        "medicationReference": {
+          "reference": "#med1"
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3NzUwMjUxMjIsImlhdCI6MTc3NDkzODcyMiwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..ag2fVCMT49Mh6U4W.sdcGozrixCAN6BS0_6Cg_CJn2nxN1nKuF7rr8H1v9DwBlg0hdpNBV7BPQa-JEHtiyQsYy2nESWATJsEoqbIYO-6fGBW2P04IgNU6mzsNC81Aw4SndJ-RVH6FccaxovkC6usku2DQGLrLkl5YyAVDai_xcENucuJAQEU6690hZalPucfV6vpS.gMfuymcyEHZjwY3XmK69bw",
+            "_value": {
+              "extension": [
+                {
+                  "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+                  "extension": [
+                    {
+                      "url": "format",
+                      "valueCode": "direct"
+                    },
+                    {
+                      "url": "marker",
+                      "valueBoolean": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "authoredOn": "2026-03-31T00:00:00+02:00",
+        "requester": {
+          "reference": "#527aa811-692d-4f17-8595-e9e7ab354e7e"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "duration": 2,
+                "durationUnit": "wk",
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 32,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          },
+          {
+            "timing": {
+              "repeat": {
+                "duration": 2,
+                "durationUnit": "wk",
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 24,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          },
+          {
+            "timing": {
+              "repeat": {
+                "duration": 2,
+                "durationUnit": "wk",
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 16,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          },
+          {
+            "timing": {
+              "repeat": {
+                "duration": 2,
+                "durationUnit": "wk",
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 8,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "start": "2026-03-31T00:00:00+02:00",
+            "end": "2026-06-29T00:00:00+02:00"
+          },
+          "quantity": {
+            "value": 1,
+            "unit": "Package",
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}"
+          }
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e27d5aa1-c54d-490a-be04-bddc4768985d",
+      "resource": {
+        "resourceType": "Consent",
+        "contained": [
+          {
+            "resourceType": "PractitionerRole",
+            "id": "pr1",
+            "meta": {
+              "profile": [
+                "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+              ]
+            },
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+                    "code": "persphysician",
+                    "display": "physician"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "resourceType": "PractitionerRole",
+            "id": "pr2",
+            "meta": {
+              "profile": [
+                "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+              ]
+            },
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+                    "code": "orgpharmacy",
+                    "display": "independent pharmacy"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "scope": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+              "code": "patient-privacy",
+              "display": "Privacy Consent"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "INFA",
+                "display": "information access"
+              }
+            ]
+          }
+        ],
+        "policy": [
+          {
+            "authority": "https://www.riziv.fgov.be",
+            "uri": "https://www.ehealth.fgov.be/ehealthplatform/file/cc73d96153bbd5448a56f19d925d05b1379c7f21/9d861ec73faaa1b588a5ed0587fa680f33c35a99/10-085-n376-recip-e-en-webtoepassing-paris-gewijzigd-op-7-december-2021.pdf"
+          }
+        ],
+        "provision": {
+          "type": "deny",
+          "actor": [
+            {
+              "role": {
+                "coding": [
+                  {
+                    "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+                    "code": "PROV",
+                    "display": "PROV"
+                  }
+                ]
+              },
+              "reference": {
+                "reference": "#pr1"
+              }
+            }
+          ],
+          "data": [
+            {
+              "meaning": "instance",
+              "reference": {
+                "reference": "urn:uuid:b8bcdc55-d3c1-4e01-bc1c-53410ede07e8"
+              }
+            }
+          ],
+          "provision": [
+            {
+              "type": "permit",
+              "actor": [
+                {
+                  "role": {
+                    "coding": [
+                      {
+                        "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+                        "code": "PHARMACY",
+                        "display": "Pharmacy"
+                      }
+                    ]
+                  },
+                  "reference": {
+                    "reference": "#pr2"
+                  }
+                }
+              ],
+              "data": [
+                {
+                  "meaning": "instance",
+                  "reference": {
+                    "reference": "urn:uuid:b8bcdc55-d3c1-4e01-bc1c-53410ede07e8"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Consent"
+      }
+    }
+  ]
+}

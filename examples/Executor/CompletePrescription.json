@@ -1,0 +1,86 @@
+{
+  "resourceType": "Task",
+  "contained": [
+    {
+      "resourceType": "PractitionerRole",
+      "id": "c102a3f6-3fe9-406e-9b98-04028aee2c0f",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+        ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+          "value": "25390145001"
+        }
+      },
+      "organization": {
+        "reference": "#58f814d3-c8b7-4a8e-98c6-23596364a65c"
+      },
+      "code": [
+        {
+          "coding": [
+            {
+              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+              "code": "perspharmacist",
+              "display": "pharmacist"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "58f814d3-c8b7-4a8e-98c6-23596364a65c",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization"
+        ]
+      },
+      "identifier": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+          "value": "32758185"
+        }
+      ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+              "code": "orgpharmacy",
+              "display": "independent pharmacy"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "requested",
+  "businessStatus": {
+    "coding": [
+      {
+        "system": "urn:be:uhmep:mp:medication-prescription-business-status",
+        "code": "completed"
+      }
+    ]
+  },
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/CodeSystem/task-code",
+        "code": "fulfill",
+        "display": "Fulfill the focal request"
+      }
+    ]
+  },
+  "focus": {
+    "reference": "BEIE612HUNK5",
+    "type": "MedicationRequest"
+  },
+  "owner": {
+    "reference": "#c102a3f6-3fe9-406e-9b98-04028aee2c0f"
+  }
+}

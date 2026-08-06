@@ -1,0 +1,97 @@
+{
+  "resourceType": "MedicationRequest",
+  "meta": {
+    "profile": [ "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeMedicationPrescription" ]
+  },
+  "contained": [ {
+    "resourceType": "PractitionerRole",
+    "id": "dca6b0b7-703d-497f-99e6-f54549215d48",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+    },
+    "practitioner": {
+      "identifier": {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+        "value": "14371044001"
+      }
+    },
+    "code": [ {
+      "coding": [ {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code": "persphysician",
+        "display": "physician"
+      } ]
+    } ]
+  }, {
+    "resourceType": "Medication",
+    "id": "med1",
+    "code": {
+      "coding": [ {
+        "system": "urn:be:samv2:type",
+        "code": "amppackage"
+      }, {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/cnk-codes",
+        "code": "0117572",
+        "display": "Lasix 50 x 40 mg",
+        "userSelected": true
+      } ]
+    }
+  } ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "priority": "routine",
+  "medicationReference": {
+    "reference": "#med1"
+  },
+  "subject": {
+    "identifier": {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3NzY0MTkxMDAsImlhdCI6MTc3NjMzMjcwMCwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..4Di83A-2-vGYDfzp.ANVvXmunGD7RMsneFra5O2PILzOjyyZRIE71UcZoCDYxdLAZybQuhZR3XEh2AVRRDlMksUGEtWP8p_LIC5rbPEWQF8mx4wsh5EeJ0GlLJuXwHm5xGO3HO7LU3t2940XsEh-RlMKkUOkyun-9ShaYuY7YJ9BLe-m7aFLgW7CxYc34Ep_K_cKa._X1uBfOPnoLKrCOe3YDPZA",
+      "_value": {
+        "extension": [ {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+          "extension": [ {
+            "url": "format",
+            "valueCode": "direct"
+          }, {
+            "url": "marker",
+            "valueBoolean": true
+          } ]
+        } ]
+      }
+    }
+  },
+  "authoredOn": "2026-04-16T00:00:00+02:00",
+  "requester": {
+    "reference": "#dca6b0b7-703d-497f-99e6-f54549215d48"
+  },
+  "dosageInstruction": [ {
+    "timing": {
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+          "code": "QOD",
+          "display": "QOD"
+        } ]
+      }
+    }
+  } ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2026-04-16T00:00:00+02:00",
+      "end": "2026-07-15T00:00:00+02:00"
+    },
+    "quantity": {
+      "value": 1,
+      "unit": "Package",
+      "system": "http://unitsofmeasure.org",
+      "code": "{Package}"
+    }
+  }
+}
