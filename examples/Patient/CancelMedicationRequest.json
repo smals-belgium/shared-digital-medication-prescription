@@ -1,0 +1,40 @@
+{
+  "resourceType": "Task",
+  "status": "requested",
+  "businessStatus": {
+    "coding": [ {
+      "system": "urn:be:uhmep:mp:medication-prescription-business-status",
+      "code": "cancelled"
+    } ]
+  },
+  "intent": "order",
+  "code": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/CodeSystem/task-code",
+      "code": "abort",
+      "display": "Mark the focal resource as no longer active"
+    } ]
+  },
+  "focus": {
+    "reference": "BEIB1EMNXJCF",
+    "type": "MedicationRequest"
+  },
+  "owner": {
+    "identifier": {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3OTQwNTU3NzYsImlhdCI6MTc5Mzk2OTM3NiwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..W0VXe7PW8bcqDBkz.UJgZxseAGIJopK54MS3IuFXgw90Ai5ALKuH6d8TkzZWicHoWptyInax8zS1kwzyKYF2w6chG3Ogi7SLzme70t-0wdbRkBiwurThWJUTXl3X4n3W6M_KWpyoytau1KBleNznXiq1WarOWCmvINTn2ELMgSB_U_mLaS1DkX_kKcEw_FzlCEzyd.wVqEME8Hh6N-o58qFU9nYA",
+      "_value": {
+        "extension": [ {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+          "extension": [ {
+            "url": "format",
+            "valueCode": "direct"
+          }, {
+            "url": "marker",
+            "valueBoolean": true
+          } ]
+        } ]
+      }
+    }
+  }
+}

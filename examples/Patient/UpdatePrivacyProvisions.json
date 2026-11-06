@@ -1,0 +1,130 @@
+{
+  "resourceType": "Task",
+  "contained": [ {
+    "resourceType": "PractitionerRole",
+    "id": "pr1",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+    },
+    "code": [ {
+      "coding": [ {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code": "persphysician",
+        "display": "physician"
+      } ]
+    } ]
+  }, {
+    "resourceType": "PractitionerRole",
+    "id": "pr2",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+    },
+    "code": [ {
+      "coding": [ {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code": "orgpharmacy",
+        "display": "independent pharmacy"
+      } ]
+    } ]
+  }, {
+    "resourceType": "Consent",
+    "id": "privacy-consent",
+    "status": "active",
+    "scope": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+        "code": "patient-privacy",
+        "display": "Privacy Consent"
+      } ]
+    },
+    "category": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "INFA",
+        "display": "information access"
+      } ]
+    } ],
+    "policy": [ {
+      "authority": "https://www.riziv.fgov.be",
+      "uri": "https://www.ehealth.fgov.be/ehealthplatform/file/cc73d96153bbd5448a56f19d925d05b1379c7f21/9d861ec73faaa1b588a5ed0587fa680f33c35a99/10-085-n376-recip-e-en-webtoepassing-paris-gewijzigd-op-7-december-2021.pdf"
+    } ],
+    "provision": {
+      "type": "deny",
+      "actor": [ {
+        "role": {
+          "coding": [ {
+            "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+            "code": "PROV",
+            "display": "PROV"
+          } ]
+        },
+        "reference": {
+          "reference": "#pr1"
+        }
+      }, {
+        "role": {
+          "coding": [ {
+            "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+            "code": "PHAR",
+            "display": "PHAR"
+          } ]
+        },
+        "reference": {
+          "reference": "#pr2"
+        }
+      } ],
+      "data": [ {
+        "meaning": "instance",
+        "reference": {
+          "identifier": {
+            "system": "http://ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-prescription",
+            "value": "BEIB1EMNXJCF"
+          }
+        }
+      } ]
+    }
+  } ],
+  "status": "requested",
+  "intent": "order",
+  "code": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/CodeSystem/task-code",
+      "code": "change",
+      "display": "Change the focal resource"
+    } ]
+  },
+  "focus": {
+    "reference": "BEIB1EMNXJCF",
+    "type": "MedicationRequest"
+  },
+  "owner": {
+    "identifier": {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3OTQwNTYxMTMsImlhdCI6MTc5Mzk2OTcxMywiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..0C91FogGlTx0p4pB.EESq1UBCr2fasgfuNaZnn575feV0IAm0LMH7wJ8DQBFDKbAr0oQr4S8mAToebY188h7TZwu9pNcE2hHNm6cQlHCXeU1jzoPJ4knBX4VfwLt_1CrAljyQBqhouTFZ9pzV4ijG4-TGJNw9Ed-E0vZkQA0rk53ld3QQuEbnv0t8F49RS4o_-m7L.wX9c2Pf-W_xyK100AU9NOA",
+      "_value": {
+        "extension": [ {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+          "extension": [ {
+            "url": "format",
+            "valueCode": "direct"
+          }, {
+            "url": "marker",
+            "valueBoolean": true
+          } ]
+        } ]
+      }
+    }
+  },
+  "input": [ {
+    "type": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/resource-types",
+        "code": "Consent",
+        "display": "Consent"
+      } ]
+    },
+    "valueReference": {
+      "reference": "#privacy-consent"
+    }
+  } ]
+}
