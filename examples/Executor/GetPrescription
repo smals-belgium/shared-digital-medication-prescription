@@ -1,1 +1,1 @@
-GET MedicationRequest/:<prescriptionRid>
+GET /MedicationRequest/{rid}

@@ -1,6 +1,15 @@
-POST MedicationRequest/_search
+POST /MedicationRequest/_search
 Body: (x-www-form-urlencoded)
-patient=https://.../ssin|<pseudonymInTransit>
-_count=50
-_offset=0
-_sort=authoredOn
+patient=pseudonym.inTransit
+&requester=30021203001
+&medication-line=medicationLine123
+&status=active
+&authoredon=ge2026-01-01
+&authoredon=le2026-07-14
+&validity-period=ge2026-07-14
+&_lastUpdated=ge2026-07-01T00%3A00%3A00%2B02%3A00
+&acting-on-behalf-of=79021802145.inTransit
+&_revinclude=Consent%3Aprovision-data
+&_sort=authoredOn
+&_offset=0
+&_count=50

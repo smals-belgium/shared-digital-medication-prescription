@@ -1,86 +1,121 @@
 {
   "resourceType": "Task",
-  "contained": [
-    {
-      "resourceType": "PractitionerRole",
-      "id": "c102a3f6-3fe9-406e-9b98-04028aee2c0f",
-      "meta": {
-        "profile": [
-          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
-        ]
-      },
-      "practitioner": {
-        "identifier": {
-          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
-          "value": "25390145001"
-        }
-      },
-      "organization": {
-        "reference": "#58f814d3-c8b7-4a8e-98c6-23596364a65c"
-      },
-      "code": [
-        {
-          "coding": [
-            {
-              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
-              "code": "perspharmacist",
-              "display": "pharmacist"
-            }
-          ]
-        }
-      ]
+  "contained": [ {
+    "resourceType": "PractitionerRole",
+    "id": "af7e83bf-cf3a-4bed-8efd-1e4e29f2fc2f",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
     },
-    {
-      "resourceType": "Organization",
-      "id": "58f814d3-c8b7-4a8e-98c6-23596364a65c",
-      "meta": {
-        "profile": [
-          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization"
-        ]
-      },
-      "identifier": [
-        {
-          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
-          "value": "32758185"
-        }
-      ],
-      "type": [
-        {
-          "coding": [
-            {
-              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
-              "code": "orgpharmacy",
-              "display": "independent pharmacy"
-            }
-          ]
-        }
-      ]
-    }
-  ],
+    "practitioner": {
+      "reference": "#050667d0-d518-4b7e-b57d-8b93c2cd521a"
+    },
+    "organization": {
+      "reference": "#0d17f29f-b2dc-4949-bade-63384e380d90"
+    },
+    "code": [ {
+      "coding": [ {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code": "perspharmacist",
+        "display": "pharmacist"
+      } ]
+    } ]
+  }, {
+    "resourceType": "Practitioner",
+    "id": "050667d0-d518-4b7e-b57d-8b93c2cd521a",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner" ]
+    },
+    "identifier": [ {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+      "value": "20003873001"
+    } ],
+    "name": [ {
+      "family": "Rondou",
+      "given": [ "Bart" ]
+    } ],
+    "telecom": [ {
+      "system": "phone",
+      "value": "+32 2 555 01 16",
+      "rank": 1
+    }, {
+      "system": "email",
+      "value": "bart.rondou@example.be",
+      "rank": 2
+    } ],
+    "address": [ {
+      "line": [ "Av. Fonsny 20" ],
+      "_line": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString": "Av. Fonsny"
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString": "20"
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+          "valueString": "1"
+        } ]
+      } ],
+      "city": "Saint-Gilles",
+      "postalCode": "1060",
+      "country": "BE"
+    } ]
+  }, {
+    "resourceType": "Organization",
+    "id": "0d17f29f-b2dc-4949-bade-63384e380d90",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization" ]
+    },
+    "identifier": [ {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+      "value": "20003873"
+    } ],
+    "type": [ {
+      "coding": [ {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code": "orgpharmacy",
+        "display": "independent pharmacy"
+      } ]
+    } ]
+  } ],
   "status": "requested",
   "businessStatus": {
-    "coding": [
-      {
-        "system": "urn:be:uhmep:mp:medication-prescription-business-status",
-        "code": "completed"
-      }
-    ]
+    "coding": [ {
+      "system": "urn:be:uhmep:mp:medication-prescription-business-status",
+      "code": "completed"
+    } ]
   },
   "intent": "order",
   "code": {
-    "coding": [
-      {
-        "system": "http://hl7.org/fhir/CodeSystem/task-code",
-        "code": "fulfill",
-        "display": "Fulfill the focal request"
-      }
-    ]
+    "coding": [ {
+      "system": "http://hl7.org/fhir/CodeSystem/task-code",
+      "code": "fulfill",
+      "display": "Fulfill the focal request"
+    } ]
   },
   "focus": {
-    "reference": "BEIE612HUNK5",
+    "reference": "BETLMJU5QKHE",
     "type": "MedicationRequest"
   },
+  "requester": {
+    "identifier": {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3OTQwNTUwNjIsImlhdCI6MTc5Mzk2ODY2MiwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..jt09EGXaaaLRgrmS.Znm32MDJCX1G4_Nw-49KWDp16KSdbYRDJ2sZYZmlU5waRa9NtB-YBNWYK6f-0Kc6VfQaKbjX8_tpkTZsktyWSRZiFvE2qowkWc4Ig15u1UVu9TeXBjsbzqpmJTn5qa2ubn6HG2vJJuH-7VripSECjHCIsymOC_dKd4ENcomhzrJ8PVO3Oyi9.fm6oNKzGRCF3EJvVuKC-Rg",
+      "_value": {
+        "extension": [ {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+          "extension": [ {
+            "url": "format",
+            "valueCode": "direct"
+          }, {
+            "url": "marker",
+            "valueBoolean": true
+          } ]
+        } ]
+      }
+    }
+  },
   "owner": {
-    "reference": "#c102a3f6-3fe9-406e-9b98-04028aee2c0f"
+    "reference": "#af7e83bf-cf3a-4bed-8efd-1e4e29f2fc2f"
   }
 }
