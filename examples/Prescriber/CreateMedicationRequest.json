@@ -1,19 +1,27 @@
 {
   "resourceType": "MedicationRequest",
+  "id": "<RID>",
   "meta": {
     "profile": [ "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeMedicationPrescription" ]
   },
   "contained": [ {
+    "resourceType": "Medication",
+    "id": "3a44a912-8d30-4c84-a1b6-1fee9caa642d",
+    "code": {
+      "coding": [ {
+        "system": "urn:be:samv2:type",
+        "code": "amppackage"
+      } ],
+      "text": "Free text medicine"
+    }
+  }, {
     "resourceType": "PractitionerRole",
-    "id": "dca6b0b7-703d-497f-99e6-f54549215d48",
+    "id": "00ab527d-19f2-43b7-ae39-9a30e864e4cb",
     "meta": {
       "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
     },
     "practitioner": {
-      "identifier": {
-        "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
-        "value": "14371044001"
-      }
+      "reference": "#1fdab321-ecb7-4e39-a872-f60d534055ac"
     },
     "code": [ {
       "coding": [ {
@@ -23,36 +31,68 @@
       } ]
     } ]
   }, {
-    "resourceType": "Medication",
-    "id": "med1",
-    "code": {
-      "coding": [ {
-        "system": "urn:be:samv2:type",
-        "code": "amppackage"
-      }, {
-        "system": "https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/cnk-codes",
-        "code": "0117572",
-        "display": "Lasix 50 x 40 mg",
-        "userSelected": true
-      } ]
-    }
+    "resourceType": "Practitioner",
+    "id": "1fdab321-ecb7-4e39-a872-f60d534055ac",
+    "meta": {
+      "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner" ]
+    },
+    "identifier": [ {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+      "value": "10026038004"
+    } ],
+    "name": [ {
+      "family": "Rondou",
+      "given": [ "Bart" ]
+    } ],
+    "telecom": [ {
+      "system": "phone",
+      "value": "+32 2 555 01 16",
+      "rank": 1
+    }, {
+      "system": "email",
+      "value": "bart.rondou@example.be",
+      "rank": 2
+    } ],
+    "address": [ {
+      "line": [ "Av. Fonsny 20" ],
+      "_line": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString": "Av. Fonsny"
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString": "20"
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+          "valueString": "1"
+        } ]
+      } ],
+      "city": "Saint-Gilles",
+      "postalCode": "1060",
+      "country": "BE"
+    } ]
   } ],
-  "identifier": [
-    {
-      "system": "urn:ietf:rfc:3986",
-      "value": "urn:uuid:1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
-    }
-  ],
+  "extension": [ {
+    "url": "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeExtOffLabel",
+    "extension": [ {
+      "url": "isOffLabelUse",
+      "valueBoolean": false
+    } ]
+  } ],
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:b942b594-45d4-4af2-b4c5-b1f6d8e64d13"
+  } ],
   "status": "active",
   "intent": "order",
   "priority": "routine",
   "medicationReference": {
-    "reference": "#med1"
+    "reference": "#3a44a912-8d30-4c84-a1b6-1fee9caa642d"
   },
   "subject": {
     "identifier": {
       "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
-      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3NzY0MTkxMDAsImlhdCI6MTc3NjMzMjcwMCwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..4Di83A-2-vGYDfzp.ANVvXmunGD7RMsneFra5O2PILzOjyyZRIE71UcZoCDYxdLAZybQuhZR3XEh2AVRRDlMksUGEtWP8p_LIC5rbPEWQF8mx4wsh5EeJ0GlLJuXwHm5xGO3HO7LU3t2940XsEh-RlMKkUOkyun-9ShaYuY7YJ9BLe-m7aFLgW7CxYc34Ep_K_cKa._X1uBfOPnoLKrCOe3YDPZA",
+      "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3OTI3NTI0OTUsImlhdCI6MTc5MjY2NjA5NSwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..GmeU5zlwNG0bBfPt.IOoX4feeki__low0EDZedQ1Tp56HqgfjkpA0DUfAj6s-FT4-PBJyYVRBJVfdTI5sUz4vGexlMewVH8Pcl9YNwSEQMEDeMaGUEkrAq1UFtQO4aJwCne8xOngTzyUmfsaIodabDZ36UA0prreDHrV1gNW3YScNS439CkjH80kXQjmb0nK5RDwH.DSdLVLAZ3A4BEUIHwIpt1Q",
       "_value": {
         "extension": [ {
           "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
@@ -67,9 +107,9 @@
       }
     }
   },
-  "authoredOn": "2026-04-16T00:00:00+02:00",
+  "authoredOn": "2026-10-22T00:00:00+02:00",
   "requester": {
-    "reference": "#dca6b0b7-703d-497f-99e6-f54549215d48"
+    "reference": "#00ab527d-19f2-43b7-ae39-9a30e864e4cb"
   },
   "dosageInstruction": [ {
     "timing": {
@@ -80,12 +120,21 @@
           "display": "QOD"
         } ]
       }
-    }
+    },
+    "asNeededBoolean": true,
+    "doseAndRate": [ {
+      "doseQuantity": {
+        "value": 1,
+        "unit": "g",
+        "system": "http://unitsofmeasure.org",
+        "code": "g"
+      }
+    } ]
   } ],
   "dispenseRequest": {
     "validityPeriod": {
-      "start": "2026-04-16T00:00:00+02:00",
-      "end": "2026-07-15T00:00:00+02:00"
+      "start": "2026-10-22T00:00:00+02:00",
+      "end": "2027-01-21T00:00:00+01:00"
     },
     "quantity": {
       "value": 1,

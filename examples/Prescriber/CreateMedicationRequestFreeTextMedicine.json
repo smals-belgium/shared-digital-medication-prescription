@@ -1,0 +1,243 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "urn:uuid:d2d0f6f3-46d5-491a-81b1-a476204ebf12",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "meta": {
+        "profile": [ "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeMedicationPrescription" ]
+      },
+      "contained": [ {
+        "resourceType": "Medication",
+        "id": "4ab551b1-d69d-4134-b12d-5f4112d608b2",
+        "code": {
+          "coding": [ {
+            "system": "urn:be:samv2:type",
+            "code": "amppackage"
+          } ],
+          "text": "Free text medicine"
+        }
+      }, {
+        "resourceType": "PractitionerRole",
+        "id": "22322f1f-eea6-4062-b820-23de9f10fcac",
+        "meta": {
+          "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+        },
+        "practitioner": {
+          "reference": "#c072f186-addc-4f02-ae6d-c335844479b6"
+        },
+        "code": [ {
+          "coding": [ {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+            "code": "persphysician",
+            "display": "physician"
+          } ]
+        } ]
+      }, {
+        "resourceType": "Practitioner",
+        "id": "c072f186-addc-4f02-ae6d-c335844479b6",
+        "meta": {
+          "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner" ]
+        },
+        "identifier": [ {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+          "value": "10026038004"
+        } ],
+        "name": [ {
+          "family": "Rondou",
+          "given": [ "Bart" ]
+        } ],
+        "telecom": [ {
+          "system": "phone",
+          "value": "+32 2 555 01 16",
+          "rank": 1
+        }, {
+          "system": "email",
+          "value": "bart.rondou@example.be",
+          "rank": 2
+        } ],
+        "address": [ {
+          "line": [ "Av. Fonsny 20" ],
+          "_line": [ {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Av. Fonsny"
+            }, {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "20"
+            }, {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "1"
+            } ]
+          } ],
+          "city": "Saint-Gilles",
+          "postalCode": "1060",
+          "country": "BE"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/medication/StructureDefinition/BeExtOffLabel",
+        "extension": [ {
+          "url": "isOffLabelUse",
+          "valueBoolean": false
+        } ]
+      } ],
+      "identifier": [ {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:3fccca00-9b16-4242-b57f-8eac989b336f"
+      } ],
+      "status": "active",
+      "intent": "order",
+      "priority": "routine",
+      "medicationReference": {
+        "reference": "#4ab551b1-d69d-4134-b12d-5f4112d608b2"
+      },
+      "subject": {
+        "identifier": {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+          "value": "urn:be:fgov:ehealth:pseudo:v2:BAG3-R9euAeP6aFa8A-f308YqKzvyFZexOoLVk27K4TfMyqGVU-sZR5HZ8Nrx2iFt1Xv5oHbt9HGzKYZat2usuKaMwDm54zGVeIPHxB9UYDoltKI6snW6WGK0_7WixXkuU4reZuf6lAiIE7xyuovPJOCWSher8Y6t3ej4hOY8GKW5CDp0A:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3OTI3NDg0NjUsImlhdCI6MTc5MjY2MjA2NSwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..IXxPTX35TpBwrUBk.gXsdK7hUBidznEVLtAV6YsC2bOlsXRB5uy96MV6B2qKk2QcmXuXw6zB8DxH5F8Ir-1dDOf3Zds7z0Aiue09eiDFyLXVeA3JV_req8Gs-jKNo-RZtPbmD0pJXApiKvzW6U43oBoR1xO3qUehAoOHrZ_eZSdhyKVBI9RPLpRUiJRh2wwrQHHUP.j4K_Qn0Q72xB3rDxrz9yEA",
+          "_value": {
+            "extension": [ {
+              "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+              "extension": [ {
+                "url": "format",
+                "valueCode": "direct"
+              }, {
+                "url": "marker",
+                "valueBoolean": true
+              } ]
+            } ]
+          }
+        }
+      },
+      "authoredOn": "2026-10-22T00:00:00+02:00",
+      "requester": {
+        "reference": "#22322f1f-eea6-4062-b820-23de9f10fcac"
+      },
+      "dosageInstruction": [ {
+        "timing": {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+              "code": "QD",
+              "display": "QD"
+            } ]
+          }
+        },
+        "asNeededBoolean": false,
+        "doseAndRate": [ {
+          "doseQuantity": {
+            "value": 2,
+            "unit": "Pill",
+            "system": "http://unitsofmeasure.org",
+            "code": "{Pill}"
+          }
+        } ]
+      } ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2026-10-22T00:00:00+02:00",
+          "end": "2027-01-21T00:00:00+01:00"
+        },
+        "quantity": {
+          "value": 1,
+          "unit": "Package",
+          "system": "http://unitsofmeasure.org",
+          "code": "{Package}"
+        }
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationRequest"
+    }
+  }, {
+    "fullUrl": "urn:uuid:579a3ac0-27cb-4a2f-ba74-aebf65672eae",
+    "resource": {
+      "resourceType": "Consent",
+      "contained": [ {
+        "resourceType": "PractitionerRole",
+        "id": "pr1",
+        "meta": {
+          "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+        },
+        "code": [ {
+          "coding": [ {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+            "code": "persphysician",
+            "display": "physician"
+          } ]
+        } ]
+      }, {
+        "resourceType": "PractitionerRole",
+        "id": "pr2",
+        "meta": {
+          "profile": [ "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole" ]
+        },
+        "code": [ {
+          "coding": [ {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+            "code": "orgpharmacy",
+            "display": "independent pharmacy"
+          } ]
+        } ]
+      } ],
+      "status": "active",
+      "scope": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+          "code": "patient-privacy",
+          "display": "Privacy Consent"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "INFA",
+          "display": "information access"
+        } ]
+      } ],
+      "policy": [ {
+        "authority": "https://www.riziv.fgov.be",
+        "uri": "https://www.ehealth.fgov.be/ehealthplatform/file/cc73d96153bbd5448a56f19d925d05b1379c7f21/9d861ec73faaa1b588a5ed0587fa680f33c35a99/10-085-n376-recip-e-en-webtoepassing-paris-gewijzigd-op-7-december-2021.pdf"
+      } ],
+      "provision": {
+        "type": "deny",
+        "actor": [ {
+          "role": {
+            "coding": [ {
+              "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+              "code": "PROV",
+              "display": "PROV"
+            } ]
+          },
+          "reference": {
+            "reference": "#pr1"
+          }
+        }, {
+          "role": {
+            "coding": [ {
+              "system": "urn:be:uhmep:mp:CodeSystem:privacy-provision-role",
+              "code": "PHAR",
+              "display": "PHAR"
+            } ]
+          },
+          "reference": {
+            "reference": "#pr2"
+          }
+        } ],
+        "data": [ {
+          "meaning": "instance",
+          "reference": {
+            "reference": "urn:uuid:d2d0f6f3-46d5-491a-81b1-a476204ebf12"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Consent"
+    }
+  } ]
+}
